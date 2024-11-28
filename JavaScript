@@ -1,10 +1,29 @@
-function menuShow() {
-    let menuMobile = document.querySelector('.mobile-menu');
-    if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open');
-        document.querySelector('.icon').src = "assets/img/menu_white_36dp.svg";
-    } else {
-        menuMobile.classList.add('open');
-        document.querySelector('.icon').src = "assets/img/close_white_36dp.svg";
-    }
+const content = document.querySelector(".content");
+const inputSearch = document.querySelector("input[type='search']");
+
+let items = [8];
+
+inputSearch.oninput = () => {
+  content.innerHTML = "";
+
+  items
+    .filter((item) =>
+      item.toLowerCase().includes(inputSearch.value.toLowerCase())
+    )
+    .forEach((item) => addHTML(item));
+};
+
+function addHTML(item) {
+  const div = document.createElement("div");
+  div.innerHTML = item;
+  content.append(div);
 }
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((data) => data.json())
+  .then((users) => {
+    users.forEach((user) => {
+      addHTML(user.name);
+      items.push(user.name);
+    });
+  });
