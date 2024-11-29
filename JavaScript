@@ -3,7 +3,7 @@ function searchProducts() {
     const query = document.getElementById('searchInput').value;  // Pega o valor digitado
     if (query) {
         console.log('Buscando por:', tenis );  // Aqui você pode colocar a lógica da busca
-        alert('Buscando por: ' + query);  // Exemplo: exibe um alerta com o termo de busca
+        alert('Buscando por: ' + tenis);  // Exemplo: exibe um alerta com o termo de busca
     } else {
         alert('Por favor, digite algo para buscar!');
     }
