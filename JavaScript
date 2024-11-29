@@ -1,1 +1,17 @@
+// Função para realizar a busca
+function searchProducts() {
+    const query = document.getElementById('searchInput').value;  // Pega o valor digitado
+    if (query) {
+        console.log('Buscando por:', query);  // Aqui você pode colocar a lógica da busca
+        alert('Buscando por: ' + query);  // Exemplo: exibe um alerta com o termo de busca
+    } else {
+        alert('Por favor, digite algo para buscar!');
+    }
+}
 
+// Adiciona o evento para a tecla Enter
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {  // Verifica se a tecla pressionada é Enter
+        searchProducts();  // Executa a busca
+    }
+});
