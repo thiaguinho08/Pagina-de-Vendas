@@ -56,9 +56,3 @@ document.getElementById('pesquisa').addEventListener('input', function() {
 document.getElementById('abrirCarrinho').addEventListener('click', function() {
    alert("Carrinho de compras:\n" + carrinho.map(item => `${item.nome} - R$${item.preco} x ${item.quantidade}`).join('\n'));
 });
-<div class="busca">
-<form action="busca.html" method="get">
-    <input type="text" name="query" placeholder="Buscar produtos..." required>
-    <button type="submit">Buscar</button>
-</form>
-</div>
