@@ -1,11 +1,4 @@
-// Lista de produtos
-const produtos = [
-    { nome: "Camiseta", preço: 29.90, descrição: "Camiseta de algodão" },
-    { nome: "Tênis", preço: 129.90, descrição: "Tênis confortável para corridas" },
-    { nome: "Laptop", preço: 2999.90, descrição: "Laptop com processador Intel i7" },
-    { nome: "Caderno", preço: 15.90, descrição: "Caderno espiral para anotações" },
-    { nome: "Caneta", preço: 2.50, descrição: "Caneta azul esferográfica" }
-  ];
+
   
   // Função para buscar produtos pelo nome
   function buscarProduto(nome) {
