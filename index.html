@@ -14,6 +14,23 @@
     </header>
 
     <main class="product-container">
+        // Função para realizar a busca
+  function searchProducts() {
+    const query = document.getElementById('searchInput').value;  // Pega o valor digitado
+    if (query) {
+        console.log('Buscando por:', query);  // Aqui você pode colocar a lógica da busca
+        alert('Buscando por: ' + query);  // Exemplo: exibe um alerta com o termo de busca
+    } else {
+        alert('Por favor, digite algo para buscar!');
+    }
+}
+
+// Adiciona o evento para a tecla Enter
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {  // Verifica se a tecla pressionada é Enter
+        searchProducts();  // Executa a busca
+    }
+});
         </div>
         <div class="product-card" data-name= "produto 1"> 
             <img src="https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg"
