@@ -1,17 +1,1 @@
-<script>
-// Função de busca
-function searchProducts() {
-    const query = document.getElementById('searchInput').value;
-    console.log('Buscando por:', query);
-    // Aqui você pode adicionar o código para realizar a busca, por exemplo, filtrando produtos
-}
 
-// Adiciona o evento para a tecla Enter
-document.getElementById('searchInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        searchProducts(); // Chama a função de busca
-    }
-});
-</script>
-</body>
-</html>
