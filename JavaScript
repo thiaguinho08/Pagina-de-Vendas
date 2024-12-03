@@ -1,20 +1,14 @@
 // script.js
-function searchProducts() {
-  const searchQuery = document.getElementById('search-bar').value.toLowerCase();
-  const products = document.querySelectorAll('.product-card');
+// Função para pesquisar produtos
+document.getElementById('pesquisa').addEventListener('input', function() {
+    const termoPesquisa = this.value.toLowerCase();
+    const produtos = document.querySelectorAll('.produto');
+ 
+ 
+    produtos.forEach(produto => {
+        const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
+        if (nomeProduto.includes(termoPesquisa)) {
+            produto.style.display = 'block';
+ 
 
-  products.forEach(product => {
-      const name = product.getAttribute('data-name').toLowerCase();
-      if (name.includes(searchQuery)) {
-          product.style.display = 'block';
-      } else {
-          product.style.display = 'none';
-      }
-  });
-}
-
-
-// Mostrar carrinho (exemplo simples)
-document.getElementById('abrirCarrinho').addEventListener('click', function() {
-   alert("Carrinho de compras:\n" + carrinho.map(item => `${item.nome} - R$${item.preco} x ${item.quantidade}`).join('\n'));
-});
+  
