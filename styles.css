@@ -95,7 +95,7 @@ body {
     background-color: #4CAF50;
     color: white;
     position: fixed;
-    bottom: 0;
+    bottom: 15px;
     width: 100%;
   }
   
