@@ -7,13 +7,13 @@ function searchProducts() {
       if (name.includes(searchTerm)) {
         product.style.display = "block";
       } else {
-        product.style.display = "none";
+        product.style.display = "block";
       }
     });
   }
   
   document.querySelectorAll(".buy-button").forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (adicionado) => {
       alert("Produto adicionado ao carrinho!");
     });
   });
