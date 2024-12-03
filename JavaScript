@@ -1,14 +1,20 @@
-// script.js
-// Função para pesquisar produtos
-document.getElementById('pesquisa').addEventListener('input', function() {
-    const termoPesquisa = this.value.toLowerCase();
-    const produtos = document.querySelectorAll('.produto');
- 
- 
-    produtos.forEach(produto => {
-        const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
-        if (nomeProduto.includes(termoPesquisa)) {
-            produto.style.display = 'block';
- 
-
+function searchProducts() {
+    const searchTerm = document.getElementById("searchBar").value.toLowerCase();
+    const products = document.querySelectorAll(".product");
+  
+    products.forEach(product => {
+      const name = product.dataset.name.toLowerCase();
+      if (name.includes(searchTerm)) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+  
+  document.querySelectorAll(".buy-button").forEach(button => {
+    button.addEventListener("click", () => {
+      alert("Produto adicionado ao carrinho!");
+    });
+  });
   
