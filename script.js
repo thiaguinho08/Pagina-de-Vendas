@@ -1,14 +1,16 @@
-const cardcontainer = document.querySelector (".cardcontainer")
-const searchimput = document.querySelector("#searchimput")   
+// script.js
+function searchProducts() {
+    const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
 
-const DisplayData = -> {
-    cardcontainer .ImerHTML = + -;
-    Date.array.forEach(e => {
-        cardcontainer.ImerHTML + - 
+    products.forEach(product => {
+        const name = product.getAttribute('data-name').toLowerCase();
+        if (name.includes(searchQuery)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
     });
 }
 
-<div class="card">
-
-    </div>
 
