@@ -11,13 +11,11 @@
 <body>
   <header>
     <h1>Thiago Store</h1>
-    <div class="search-bar">
-      <label for="searchimput">
-        <span class="material-simbols outlined"> search </span>
-      </label>
-      <input type="text" id="searchBar" placeholder="Pesquisar...">
-      <button onclick="searchProducts()">Buscar</button>
-    </div>
+    <div class="barraPesquisa">
+      <input type="text" id="pesquisa" placeholder="Pesquisar produtos...">
+  </div>
+  <button id="abrirCarrinho">🛒 Carrinho (<span id="quantidadeItens">0</span>)</button>
+  <button id="abrirFavoritos">❤️ Favoritos</button>
   </header>
 
   <main>
