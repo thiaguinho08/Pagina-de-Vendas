@@ -1,16 +1,17 @@
 // script.js
-function searchProducts() {
-    const searchQuery = document.getElementById('search-bar').value.toLowerCase();
-    const products = document.querySelectorAll('.product-card');
 
-    products.forEach(product => {
-        const name = product.getAttribute('data-name').toLowerCase();
-        if (name.includes(searchQuery)) {
-            product.style.display = 'block';
+
+function searchProducts() {
+    const searchQuery = document.getElementById("search-bar").value.toLowerCase();
+    const productCards = document.querySelectorAll(".product-card");
+
+    productCards.forEach(card => {
+        const productName = card.getAttribute("data-name").toLowerCase();
+        if (productName.includes(searchQuery)) {
+            card.style.display = "block";
         } else {
-            product.style.display = 'none';
+            card.style.display = "none";
         }
     });
 }
-
 
