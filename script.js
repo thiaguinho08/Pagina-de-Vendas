@@ -3,7 +3,7 @@
 
 function searchProducts() {
     const searchQuery = document.getElementById("search-bar").value.toLowerCase();
-    const productCards = document.querySelectorAll(".product-card");
+    const productCards = document.querySelectorAll("tenis");
 
     productCards.forEach(card => {
         const productName = card.getAttribute("data-name").toLowerCase();
