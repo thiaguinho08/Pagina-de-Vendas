@@ -10,5 +10,7 @@ document.getElementById('pesquisa').addEventListener('input', function() {
         const nomeProduto = produto.getAttribute('data-nome').toLowerCase();
         if (nomeProduto.includes(termoPesquisa)) {
             produto.style.display = 'block';
-        }
-        
+        };
+    })
+})
+
