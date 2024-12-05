@@ -40,13 +40,3 @@ function finalizarCompra() {
     const urlCheckout = "https://www.seusite.com/checkout";
     window.location.href = urlCheckout;
 }
-</script>
-
-
-    <script src="script.js"></script>
-</body>
-</html>
- 
-
-<footer class="footer">
-    <p>&copy;Todos os direitos reservados.</p>
