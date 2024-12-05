@@ -37,7 +37,7 @@ inputBox.onkeyup = (e)=>{
             allList[i].setAttribute("onclick", "select(this)");
         }
 
-        if (e.key === 'Escape'){
+        if (e.key === 'Escape'){ 
           searchWrapper.classList.remove("active");
         }
     }else{
