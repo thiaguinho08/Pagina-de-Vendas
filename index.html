@@ -12,6 +12,7 @@
     <header class="header">
         <div class="logo">Thiago Store</div>
         <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="buscar()">
+        <link rel="https://fonts.google.com/" href="script.js">
     </header>
     
     <main class="product-container">
@@ -105,22 +106,4 @@
 
 <footer class="footer">
 <p>&copy;Todos os direitos reservados.</p>
-
-<div function searchProducts{
-    const searchQuery = document.getElementById("search-bar").value.toLowerCase();
-    const productCards = document.querySelectorAll(".product-card");
-
-    productCards.forEach(card => {
-        const productName = card.getAttribute("data-name").toLowerCase();
-        if (productName.includes(searchQuery)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-</div>
-
-
-
 
