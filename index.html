@@ -3,93 +3,159 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galáxia Store</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedrinho Store</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
- 
-   <header class="busca"> 
-  <form aria-controls="Buscar" method="get"></form>
-    <div class="barraPesquisa">
-        <input type="text" id="pesquisa" placeholder="Pesquisar produtos...">
-       <button required type="submit""Buscar"></button>
-    </div>
+<body>
+    <header class="header">
+        <div class="logo">Pedrinho Store</div>
+        <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="searchProducts()">
+    </header>
 
-   </header>
+    <main class="product-container">
+        <div class="product-card" data-name="Produto 1">
+            <img src="https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg"
+            <h2>Tênis Adidas Breaknet - Branco</h2>
+            <p>R$ 199,99</p>
+            <p>Frete: R$ 10,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Tênis Adidas Breaknet - Branco-R$ 199,99')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 2">
+            <img src="data:image/jpeg;base64,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"
+            <h2>Camisa Corinthians III 24/25 s/n° Torcedor Nike Masculina</h2>
+            <p>R$ 332,49</p>
+            <p>Frete: R$ 12,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Camisa Corinthians III 24/25 s/n° Torcedor Nike Masculina-R$ 332,49')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 3">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSbwgb_O5oIVFOK3VGilVNsT-nJD5-DvLKhilDBZy2MmSCBuA3SuGtc-fZt-h2cGCWR3k7s-tJ70crR4we_jc-JPsnq3IGIy1DJgazM2XvHAY-VQdyrvpUc&usqp=CAE"
+            <h2>Sony Playstation 5 1TB Slim com Leitor de Disco e o jogo Spiderman 2</h2>
+            <p>R$ 3.298,69</p>
+            <p>Frete: R$ 8,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Sony Playstation 5 1TB Slim com Leitor de Disco e o jogo Spiderman 2-R$ 3.298,69')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 4">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR53ft51kwvTEsGUiQbcn-wkIt0Sm1h0WZ8zD9wp2p07cptAt5SYWzOTBtp4eRptzEPJylmetK1veNgfUco-R8PzhNwbkM3gwKNvIU-teMcB2xb_3k99coK&usqp=CAE"
+            <h2>Apple iPhone 16 128GB - Branco</h2>
+            <p>R$ 7.019,10</p>
+            <p>Frete: R$ 15,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Apple iPhone 16 128GB - Branco-R$ 7.019,10')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 5">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT7BJfyZgUNlVyhTCNgy3Yo5zYD6HXjDPKAWyyFPR9q6tVk7Vwgk8sF89DZ8xhObnRIdG4UtnGZq1t49Be40sP0Rcf6e_mblOGpyKaY6QSrHljq1rpy7_h74Q&usqp=CAE"
+            <h2>Monitor Cardíaco De Pulso Com Gps Garmin Forerunner 955 Solar Preto</h2>
+            <p>R$ 4.965,27</p>
+            <p>Frete: R$ 20,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick
+        ="adicionarAoCarrinho('Monitor Cardíaco De Pulso Com Gps Garmin Forerunner 955 Solar Preto-R$ 4.965,27')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 6">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQtlb3h6a7BZq_a2biZDYgOcCWFj2T8zZX8azg80RtIXts_umPpXvYd2hWaQXEHwBdX3lcmNqWqPD9FulAV342ocCdZLaWP8BZA-umnM6uPNePXcqB94oBjQ&usqp=CAE"
+            <h2>Gabinete Gamer O11 Vision Preto O11VX Black - Lian Li</h2>
+            <p>R$ 1.288,00</p>
+            <p>Frete: R$ 10,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Gabinete Gamer O11 Vision Preto O11VX Black - Lian Li-R$ 1.288,00')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 7">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQfHScgQiedsFShtmvnNRxSx-o1XWGDfrd0IyqHeobhwMHqOfjfB_SyfDtx4kDL3XR4xghzeJzk0vv3M2d3AnKkImj1wT2As6V6Kyrhq0-6P1VnK8Cr9Dd2&usqp=CAE"
+            <h2>Hyperx Microfone Gamer Quadcast</h2>
+            <p>R$ 656,92</p>
+            <p>Frete: R$ 25,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Hyperx Microfone Gamer Quadcast-R$ 656,92')">Adicionar ao Carrinho</button>
+
+        </div>
+        <div class="product-card" data-name="Produto 8">
+            <img src="https://aws-obg-image-lb-3.tcl.com/content/dam/brandsite/region/brazil/products/tv/x-series/x955/x955-new-1.png?t=1719198966832&w=800"
+            <h2>Ultimate 4K QD-MiniLED TV 115” X955 Max</h2>
+            <p>R$ 29.459,99</p>
+            <p>Frete: R$ 30,00</p>
+            <button>Comprar</button>
+
+        </p>
+        <button onclick="adicionarAoCarrinho('Ultimate 4K QD-MiniLED TV 115” X955 Max-R$ 29.459,99')">Adicionar ao Carrinho</button>
+
+        </div>
+    </main>
+
+    <div class="container">
+        <h2> Carrinho </h2>
+        <div class="carrinho">
+
+<div class="cart-summary" id="cart-summary">
+    <p>Carrinho: Vazio</p>
+    <button class="cart-button" onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+</div>
+
+<script>
+let carrinho = [];
+
+function adicionarAoCarrinho(item) {
+    // Adiciona o item ao carrinho
+    carrinho.push(item);
+    atualizarResumoCarrinho();
+}
+
+function atualizarResumoCarrinho() {
+    // Exibe os itens no carrinho
+    const cartSummary = document.getElementById('cart-summary');
+    if (carrinho.length > 0) {
+        cartSummary.innerHTML = `
+            <p>Itens no Carrinho: ${carrinho.join(', ')}</p>
+            <button class="cart-button" onclick="finalizarCompra()">Finalizar Compra</button>
+        `;
+    } else {
+        cartSummary.innerHTML = `
+            <p>Carrinho: Vazio</p>
+            <button class="cart-button" onclick="finalizarCompra()">Finalizar Compra</button>
+        `;
+    }
+}
+
+function finalizarCompra() {
+    // Redireciona para o site de compras (você pode substituir pela URL do seu checkout)
+    const urlCheckout = "https://www.seusite.com/checkout";
+    window.location.href = urlCheckout;
+}
+</script>
 
 
-   <main class="product-container">
-      
-      
-       </div>
-       <div class="product-card" data-name= "produto 1">
-           <img src="https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg"
-           <h2> Livro de leitura</h2>
-           <p>R$ 89,90</p>
-           <p>Frete: R$ 10,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 2">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_wkAaPGMcvPVdiXyQHiMmyMvECEkMcZjX7A&s"
-           <h2>Tênis</h2>
-           <p>R$ 120,00</p>
-           <p>Frete: R$ 32,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 3">
-           <img src="https://wx.mlcdn.com.br/ponzi/production/portaldalu/12278_01.jpg"
-           <h2>Video-Game</h2>
-           <p>R$ 1500,00</p>
-           <p>Frete: R$ 23,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 4">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7MiUPgwLQejE_fPYMwIqdNPwThOzVOVWwg&s"
-           <h2>Smart tv</h2>
-           <p>R$ 2100,00</p>
-           <p>Frete: R$ 56,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 5">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1imqDmTzoCANXPzuB5iHPEolI0Jc_4F6-A&s"
-           <h2>Relógio</h2>
-           <p>R$ 900,00</p>
-           <p>Frete: R$ 30,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 6">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKoj4jqbRINi29_6TBRhI6raFWLfhGXvkJnQ&s"
-           <h2>Caixa de Som</h2>
-           <p>R$ 689,90</p>
-           <p>Frete: R$ 35,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 7">
-           <img src="https://acdn.mitiendanube.com/stores/003/987/020/products/img_9297-ae8d3be43a2f82816b17201463558778-1024-1024.png"
-           <h2>Juliet</h2>
-           <p>R$ 100,00</p>
-           <p>Frete: R$ 25,00</p>
-           <button>Comprar</button>
-       </div>
-       <div class="product-card" data-name="Produto 8">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtIg93TzX_oBX3tLh2ljLdsds09i77CppPw&s"
-           <h2>Samsung</h2>
-           <p>R$ 1300,00</p>
-           <p>Frete: R$ 30,00</p>
-           <button>Comprar</button>
-       </div>
-   </main>
-
-
-   <footer class="footer">
-       <p>&copy; 2024 Galáxia Store. Todos os direitos reservados.</p>
-   </footer>
-
-
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+ 
+
+<footer class="footer">
+    <p>&copy;Todos os direitos reservados.</p>
 
 
 
