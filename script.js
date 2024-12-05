@@ -11,13 +11,13 @@ inputBox.onkeyup = (e)=>{
 
     if (e.key === 'Enter'){
       if(userData){
-        window.open(`https://thiaguinho08.github.io/Pagina-de-Vendas/=${userData}`, '_blank')
+        window.open(`https://www.seusite.com/${userData}`, '_blank')
       }
     }
 
     if(userData){
         icon.onclick = ()=>{
-            webLink = `https://thiaguinho08.github.io/Pagina-de-Vendas/=${userData}`;
+            webLink = https://www.seusite.com/${userData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
@@ -49,7 +49,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = `https://thiaguinho08.github.io/Pagina-de-Vendas/=${selectData}`;
+        webLink = `https://www.seusite.com/${selectData}`;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }
