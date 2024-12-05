@@ -1,9 +1,10 @@
 let suggestions = [
     "Tenis Casual",
-    "YouTube",
-    "YouTuber",
-    "Carros",
-    "Facebook",
-    "Dev Sandrin",
-    "Projetos CSS",
+    "Livro de leitura",
+    "video-game",
+    "smart",
+    "juliet",
+    "caixa de som",
+    "samsung",
+    "relogio",
   ];

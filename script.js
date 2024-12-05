@@ -18,7 +18,7 @@ inputBox.onkeyup = (e)=>{
     if(userData){
         icon.onclick = ()=>{
             webLink = https://www.seusite.com/produtos/${userData.replace(/\s+/g, '-').toLowerCase()}`;`;
-            linkTag.setAttribute("href", webLink);
+            linkTag.setAttribute("tenis casual, livro de leitura, video-game, smart, relogio, caixa de som , juliet, samsumg", webLink);
             linkTag.click();
         }
         emptyArray = suggestions.filter((data)=>{
