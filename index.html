@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <div class="logo">Thiago Store</div>
-        <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="searchProducts()">
+        <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="buscar()">
     </header>
     
     <main class="product-container">
@@ -23,8 +23,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Tênis Adidas Breaknet - Branco-R$ 199,99')">Adicionar ao Carrinho</button>
-
         </div>
         <div class="product-card" data-name="Produto 2">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_wkAaPGMcvPVdiXyQHiMmyMvECEkMcZjX7A&s"
@@ -81,8 +79,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="comprar"('Hyperx Microfone Gamer Quadcast-R$ 656,92')">Adicionar ao Carrinho</button>
-
         </div>
         <div class="product-card" data-name="Produto 8">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtIg93TzX_oBX3tLh2ljLdsds09i77CppPw&s"
@@ -95,14 +91,7 @@
         </div>
     </main>
 
-    <div class="container">
-        <h2> Carrinho </h2>
-        <div class="carrinho">
 
-<div class="cart-summary" id="cart-summary">
-    <p>Carrinho: Vazio</p>
-    <button class="cart-button" onclick="finalizarCompra()">Finalizar Compra</button>
-</div>
 </div>
 
 
