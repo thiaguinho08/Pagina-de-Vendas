@@ -68,7 +68,7 @@ function select(element) {
     let formattedProductName = selectData.replace(/\s+/g, '-').toLowerCase();
     icon.onclick = () => {
         webLink = `https://www.seusite.com/produtos/${formattedProductName}`;
-        linkTag.setAttribute("href", webLink);
+        linkTag.setAttribute("https://www.seusite.com/produtos/tenis-casual", webLink);
         linkTag.click();
     };
 
