@@ -1,5 +1,5 @@
 let suggestions = [
-    "tenis",
+    "Tenis Casual",
     "YouTube",
     "YouTuber",
     "Carros",
