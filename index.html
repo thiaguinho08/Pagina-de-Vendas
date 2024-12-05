@@ -13,12 +13,7 @@
         <div class="logo">Thiago Store</div>
         <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="searchProducts()">
     </header>
-    <div{
-        // Redireciona para o site de compras (você pode substituir pela URL do seu checkout)
-        const urlCheckout = "https://www.seusite.com/checkout";
-        window.location.href = urlCheckout;>
-    }
-</div>
+    
     <main class="product-container">
         <div class="product-card" data-name="Produto 1">
             <img src="https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg"
@@ -39,7 +34,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Camisa Corinthians III 24/25 s/n° Torcedor Nike Masculina-R$ 332,49')">Adicionar ao Carrinho</button>
 
         </div>
         <div class="product-card" data-name="Produto 3">
@@ -50,8 +44,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Sony Playstation 5 1TB Slim com Leitor de Disco e o jogo Spiderman 2-R$ 3.298,69')">Adicionar ao Carrinho</button>
-
         </div>
         <div class="product-card" data-name="Produto 4">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7MiUPgwLQejE_fPYMwIqdNPwThOzVOVWwg&s"
@@ -61,8 +53,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Apple iPhone 16 128GB - Branco-R$ 7.019,10')">Adicionar ao Carrinho</button>
-
         </div>
         <div class="product-card" data-name="Produto 5">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1imqDmTzoCANXPzuB5iHPEolI0Jc_4F6-A&s"
@@ -72,9 +62,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick
-        ="adicionarAoCarrinho('Monitor Cardíaco De Pulso Com Gps Garmin Forerunner 955 Solar Preto-R$ 4.965,27')">Adicionar ao Carrinho</button>
-
         </div>
         <div class="product-card" data-name="Produto 6">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKoj4jqbRINi29_6TBRhI6raFWLfhGXvkJnQ&s"
@@ -84,7 +71,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Gabinete Gamer O11 Vision Preto O11VX Black - Lian Li-R$ 1.288,00')">Adicionar ao Carrinho</button>
 
         </div>
         <div class="product-card" data-name="Produto 7">
@@ -95,7 +81,7 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Hyperx Microfone Gamer Quadcast-R$ 656,92')">Adicionar ao Carrinho</button>
+        <button onclick="comprar"('Hyperx Microfone Gamer Quadcast-R$ 656,92')">Adicionar ao Carrinho</button>
 
         </div>
         <div class="product-card" data-name="Produto 8">
@@ -106,8 +92,6 @@
             <button>Comprar</button>
 
         </p>
-        <button onclick="adicionarAoCarrinho('Ultimate 4K QD-MiniLED TV 115” X955 Max-R$ 29.459,99')">Adicionar ao Carrinho</button>
-
         </div>
     </main>
 
