@@ -5,83 +5,73 @@ const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
 let webLink;
 
-// Lista de sugestões de produtos (por exemplo, categorias ou produtos populares)
-const suggestions = [
-    "Tênis casual",
-    "Camiseta Adidas",
-    "Smartphone Samsung",
-    "Macbook Pro",
-    "Fone de Ouvido JBL"
-];
 
-inputBox.onkeyup = (e) => {
-    let userData = e.target.value.trim().toLowerCase(); // Dado digitado pelo usuário (em minúsculas)
-    let emptyArray = [];
+inputBox.onkeyup = (e)=>{
+   let userData = e.target.value; //user enetered data
+   let emptyArray = [];
 
-    // Se o usuário pressionar Enter, abrir a página do produto
-    if (e.key === 'Enter' && userData) {
-        webLink = `https://www.seusite.com/produtos/${userData.replace(/\s+/g, '-').toLowerCase()}`;
-        window.open(webLink, '_blank');
-    }
 
-    if (userData) {
-        // Ao clicar no ícone, abrir o link do produto
-        icon.onclick = () => {
-            webLink = `https://www.seusite.com/produtos/${userData.replace(/\s+/g, '-').toLowerCase()}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
-        };
+   if (e.key === 'Enter'){
+     if(userData){
+       window.open(https://www.seusite.com/produtos; '_blank')
+     }
+   }
 
-        // Filtrar sugestões com base no que o usuário digitou
-        emptyArray = suggestions.filter((data) => {
-            return data.toLowerCase().startsWith(userData);
-        });
 
-        // Converter sugestões filtradas para elementos <li>
-        emptyArray = emptyArray.map((data) => {
-            return `<li>${data}</li>`;
-        });
+   if(userData){
+       icon.onclick = ()=>{
+           webLink = https://www.seusite.com/produtos;
+           linkTag.setAttribute("tenis casual, livro de leitura, video-game, smart, relogio, caixa de som , juliet, samsumg", webLink);
+           linkTag.click();
+       }
+       emptyArray = suggestions.filter((data)=>{
+           //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+           return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+       });
+       emptyArray = emptyArray.map((data)=>{
+           // passing return data inside li tag
+           return data = `<li>${data}</li>`;
+       });
+       searchWrapper.classList.add("active"); //show autocomplete box
+       showSuggestions(emptyArray);
+       let allList = sugestBox.querySelectorAll("li");
+       for (let i = 0; i < allList.length; i++) {
+           //adding onclick attribute in all li tag
+           allList[i].setAttribute("onclick", "select(this)");
+       }
 
-        // Exibir a caixa de sugestões
-        searchWrapper.classList.add("active");
-        showSuggestions(emptyArray);
 
-        // Adicionar evento de clique para cada item da lista
-        let allList = sugestBox.querySelectorAll("li");
-        allList.forEach((item) => {
-            item.addEventListener("click", () => select(item));
-        });
-
-        if (e.key === 'Escape') {
-            searchWrapper.classList.remove("active");
-        }
-    } else {
-        searchWrapper.classList.remove("active"); // Ocultar a caixa de sugestões
-    }
-};
-
-function select(element) {
-    let selectData = element.textContent;
-    inputBox.value = selectData;
-
-    // Ao selecionar um item da lista, abrir o link correspondente
-    let formattedProductName = selectData.replace(/\s+/g, '-').toLowerCase();
-    icon.onclick = () => {
-        webLink = `https://www.seusite.com/produtos/${formattedProductName}`;
-        linkTag.setAttribute("https://www.seusite.com/produtos/tenis-casual", webLink);
-        linkTag.click();
-    };
-
-    searchWrapper.classList.remove("active"); // Ocultar as sugestões
+       if (e.key === 'Escape'){
+         searchWrapper.classList.remove("active");
+       }
+   }else{
+       searchWrapper.classList.remove("active"); //hide autocomplete box
+   }
 }
 
-function showSuggestions(list) {
-    let listData;
-    if (!list.length) {
-        listData = `<li>${inputBox.value}</li>`;
-    } else {
-        listData = list.join('');
-    }
-    sugestBox.innerHTML = listData;
+
+function select(element){
+   let selectData = element.textContent;
+   inputBox.value = selectData;
+   icon.onclick = ()=>{
+       webLink = https://www.seusite.com/produtos;
+       linkTag.setAttribute("href", webLink);
+       linkTag.click();
+   }
+   searchWrapper.classList.remove("active");
 }
+
+
+function showSuggestions(list){
+   let listData;
+   console.log(!list.length);
+   if(!list.length){
+       userValue = inputBox.value;
+       listData = `<li>${userValue}</li>`;
+   }else{
+     listData = list.join('');
+   }
+   sugestBox.innerHTML = listData;
+}
+
 
