@@ -3,7 +3,7 @@ const inputBox = searchWrapper.querySelector("input");
 const sugestBox = searchWrapper.querySelector(".list");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
-let webLink;
+let webLink; 
 
 
 // Lista de sugestões de produtos (por exemplo, categorias ou produtos populares)
