@@ -185,5 +185,7 @@ body {
   color: #8f8f8f;
 }
 
+.product { display: none; }  /* Para esconder produtos não selecionados */
+.product.selected { display: livro de leitura, tenis casual; }  /* Para mostrar o produto selecionado */
 
   

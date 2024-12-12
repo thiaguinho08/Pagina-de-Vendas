@@ -23,8 +23,9 @@ inputBox.onkeyup = (e) => {
 
     // Se o usuário pressionar Enter, abrir a página do produto
     if (e.key === 'Enter' && userData) {
-        webLink = ``https://www.seusite.com/${categoria}`;
+        webLink =`https://www.seusite.com/produtos?search=${formattedProductName}`;
 
+        // Abrir o link no navegador
         window.open(webLink, '_blank');
     }
 
@@ -32,7 +33,7 @@ inputBox.onkeyup = (e) => {
     if (userData) {
         // Ao clicar no ícone, abrir o link do produto
         icon.onclick = () => {
-            webLink =`https://www.seusite.com/${categoria}`;
+            webLink =`https://www.seusite.com/produtos?search=${formattedProductName}`;
 
             linkTag.setAttribute("href", webLink);
             linkTag.click();
@@ -80,8 +81,7 @@ function select(element) {
     // Ao selecionar um item da lista, abrir o link correspondente
     let formattedProductName = selectData.replace(/\s+/g, '-').toLowerCase();
     icon.onclick = () => {
-        webLink =`https://www.seusite.com/${categoria}`;
-
+        webLink =`https://www.seusite.com/produtos?search=${formattedProductName}`;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     };
