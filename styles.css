@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: "Chakra Petch", sans-serif;
   background: linear-gradient(135deg,  red, red);
-  color: white;
+  color: red;
 }
 
 .header {
