@@ -74,5 +74,5 @@ function checkout() {
 
     alert("Pagamento via " + metodo);
 
-    window.location.href = "https://mpago.la/00020126360014br.gov.bcb.pix0114+55169962708145204000053039865802BR5915T202510181550266009Sao Paulo610901227-20062240520daqr2934183479538308630486F7"
+     "window.location.href = "https://mpago.la/SEU_LINK_AQUI";"
 }
