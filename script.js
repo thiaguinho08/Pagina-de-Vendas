@@ -74,5 +74,5 @@ function checkout() {
 
     alert("Pagamento via " + metodo);
 
-    window.location.href = "https://wa.me/5516996270814?text=Olá,%20quero%20finalizar%20a%20compra";
+    window.location.href = "https://wa.me/5516996270814";
 }
