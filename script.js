@@ -72,7 +72,27 @@ function checkout() {
         return;
     }
 
-    alert("Pagamento via " + metodo);
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
 
-    window.location.href = "https://wa.me/5516996270814";
+    fetch("http://localhost:3000/criar-pagamento", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            itens: carrinho
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        // 🔥 REDIRECIONA PARA PAGAMENTO
+        window.location.href = data.init_point;
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Erro ao iniciar pagamento");
+    });
 }
