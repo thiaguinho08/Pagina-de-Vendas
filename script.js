@@ -74,5 +74,5 @@ function checkout() {
 
     alert("Pagamento via " + metodo);
 
-    window.location.href = "https://mpago.la/abc123";
+    window.location.href = "https://wa.me/5516996270814";
 }
