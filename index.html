@@ -13,6 +13,7 @@
     <header class="header">
         <div class="logo">Thiago Store</div>
         <input type="text" id="search-bar" placeholder="Busque um produto..." oninput="searchProducts()">
+    <button onclick="abrirCarrinho()">🛒 Carrinho</button>
     </header>
 
     <main class="product-container">
@@ -102,17 +103,31 @@
   <ul id="cart-items"></ul>
   <p>Total: R$ <span id="cart-total">0.00</span></p>
 
-  <select id="payment-method">
-    <option value="pix">Pix</option>
-    <option value="cartao">Cartão</option>
-    <option value="boleto">Boleto</option>
-  </select>
+<div id="carrinhoTela" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8);">
 
-  <input type="text" id="conta" placeholder="Chave Pix ou conta" />
+  <div style="background:white; width:300px; margin:100px auto; padding:20px; border-radius:10px;">
+    
+    <h3>🛒 Seu Carrinho</h3>
+    
+    <ul id="cart-items"></ul>
+    
+    <p>Total: R$ <span id="cart-total">0.00</span></p>
 
-  <button onclick="checkout()">Finalizar Compra</button>
+    <select id="payment-method">
+      <option>Pix</option>
+      <option>Cartão</option>
+      <option>Boleto</option>
+    </select>
+
+    <input type="text" id="conta" placeholder="Chave Pix ou conta">
+
+    <button onclick="checkout()">Finalizar</button>
+    <button onclick="fecharCarrinho()">Fechar</button>
+
+  </div>
 </div>
 
+  
 </body>
 </html>
  
