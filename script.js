@@ -73,7 +73,7 @@ function checkout() {
     }
 
     if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
+        alert("Carrinho vazio!");
         return;
     }
 
@@ -87,12 +87,23 @@ function checkout() {
         })
     })
     .then(res => res.json())
+
+    // 🔥 👉 É AQUI QUE ENTRA O SEU CÓDIGO
     .then(data => {
-        // 🔥 REDIRECIONA PARA PAGAMENTO
-        window.location.href = data.init_point;
+        const container = document.getElementById("carrinhoTela");
+
+        container.innerHTML = `
+            <h2>Escaneie o QR Code para pagar</h2>
+        `;
+
+        const img = document.createElement("img");
+        img.src = "data:image/png;base64," + data.qr_code_base64;
+
+        container.appendChild(img);
     })
+
     .catch(err => {
         console.error(err);
-        alert("Erro ao iniciar pagamento");
+        alert("Erro ao gerar pagamento");
     });
 }
