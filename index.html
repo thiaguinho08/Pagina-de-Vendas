@@ -17,7 +17,7 @@
 
     <main class="product-container">
         <div class="product-card" data-name="Livro de Leitura">
-            <img src= "https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg"
+            <img src= "https://img.freepik.com/vetores-premium/conceito-de-biblioteca-de-leitura-para-amantes-de-livros_88465-2435.jpg">
             <h2>Livro de Leitura</h2>
             <p>R$ 199,99</p>
             <p>Frete: R$ 10,00</p>
@@ -27,75 +27,63 @@
         </p>  
 
         </div>
-        <div class="product-card" data-name=">Tênis casual">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_wkAaPGMcvPVdiXyQHiMmyMvECEkMcZjX7A&s"
+        <div class="product-card" data-name="Tênis casual">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_wkAaPGMcvPVdiXyQHiMmyMvECEkMcZjX7A&s">
             <h2>Tênis casual</h2>
             <p>R$ 332,49</p>
             <p>Frete: R$ 12,00</p>
             <button>Comprar</button>
 
-        </p>
 
         </div>
         <div class="product-card" data-name="Video-Game">
-            <img src="https://wx.mlcdn.com.br/ponzi/production/portaldalu/12278_01.jpg"
+            <img src="https://wx.mlcdn.com.br/ponzi/production/portaldalu/12278_01.jpg">
             <h2>Video-Game</h2>
             <p>R$ 3.298,69</p>
             <p>Frete: R$ 8,00</p>
             <button>Comprar</button>
-
-        </p>
         
 
         </div>
         <div class="product-card" data-name="Smart">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7MiUPgwLQejE_fPYMwIqdNPwThOzVOVWwg&s"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7MiUPgwLQejE_fPYMwIqdNPwThOzVOVWwg&s">
             <h2>Smart</h2>
             <p>R$ 7.019,10</p>
             <p>Frete: R$ 15,00</p>
             <button>Comprar</button>
-
-        </p>
         
 
         </div>
         <div class="product-card" data-name="Relogio">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1imqDmTzoCANXPzuB5iHPEolI0Jc_4F6-A&s"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1imqDmTzoCANXPzuB5iHPEolI0Jc_4F6-A&s">
             <h2>Relogio</h2>
             <p>R$ 4.965,27</p>
             <p>Frete: R$ 20,00</p>
             <button>Comprar</button>
 
-        </p>
-
         </div>
         <div class="product-card" data-name="Caixa de Som">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKoj4jqbRINi29_6TBRhI6raFWLfhGXvkJnQ&s"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKoj4jqbRINi29_6TBRhI6raFWLfhGXvkJnQ&s">
             <h2>Caixa de Som</h2>
             <p>R$ 1.288,00</p>
             <p>Frete: R$ 10,00</p>
             <button>Comprar</button>
 
-        </p>
-
         </div>
         <div class="product-card" data-name="Juliet">
-            <img src="https://acdn.mitiendanube.com/stores/003/987/020/products/img_9297-ae8d3be43a2f82816b17201463558778-1024-1024.png"
+            <img src="https://acdn.mitiendanube.com/stores/003/987/020/products/img_9297-ae8d3be43a2f82816b17201463558778-1024-1024.png">
             <h2>Juliet</h2>
             <p>R$ 656,92</p>
             <p>Frete: R$ 25,00</p>
             <button>Comprar</button>
-        </p>
 
         </div>
         <div class="product-card" data-name="Samsung">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtIg93TzX_oBX3tLh2ljLdsds09i77CppPw&s"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtIg93TzX_oBX3tLh2ljLdsds09i77CppPw&s">
             <h2>Samsung</h2>
             <p>R$ 9.459,99</p>
             <p>Frete: R$ 30,00</p>
             <button>Comprar</button>
-
-        </p>
 
         </div>
     </main>
@@ -108,6 +96,23 @@
 
 
     <script src="script.js"></script>
+
+    <div class="cart-box">
+  <h3>🛒 Carrinho</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: R$ <span id="cart-total">0.00</span></p>
+
+  <select id="payment-method">
+    <option value="pix">Pix</option>
+    <option value="cartao">Cartão</option>
+    <option value="boleto">Boleto</option>
+  </select>
+
+  <input type="text" id="conta" placeholder="Chave Pix ou conta" />
+
+  <button onclick="checkout()">Finalizar Compra</button>
+</div>
+
 </body>
 </html>
  
