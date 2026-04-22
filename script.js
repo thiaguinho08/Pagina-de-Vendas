@@ -12,35 +12,55 @@ function searchProducts() {
     });
 }
 
-let cart = [];
+let carrinho = [];
 
-document.querySelectorAll(".product-card button").forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        const card = btn.parentElement;
-        const nome = card.getAttribute("data-name");
-        const precoTexto = card.querySelector("p").innerText;
-        const preco = parseFloat(precoTexto.replace("R$", "").replace(",", "."));
+function addCarrinho(botao) {
+    const card = botao.parentElement;
 
-        cart.push({ nome, preco });
-        updateCart();
-    });
-});
+    const nome = card.getAttribute("data-name");
 
-function updateCart() {
-    const cartList = document.getElementById("cart-items");
+    const precoTexto = card.querySelector("p").innerText;
+    const preco = parseFloat(precoTexto.replace("R$", "").replace(",", "."));
+
+    carrinho.push({ nome, preco });
+
+    alert(nome + " adicionado ao carrinho!");
+}
+
+function abrirCarrinho() {
+    document.getElementById("carrinhoTela").style.display = "block";
+    atualizarCarrinho();
+}
+
+function fecharCarrinho() {
+    document.getElementById("carrinhoTela").style.display = "none";
+}
+
+function atualizarCarrinho() {
+    const lista = document.getElementById("cart-items");
     const totalSpan = document.getElementById("cart-total");
 
-    cartList.innerHTML = "";
+    lista.innerHTML = "";
     let total = 0;
 
-    cart.forEach(item => {
+    carrinho.forEach((item, index) => {
         const li = document.createElement("li");
-        li.innerText = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-        cartList.appendChild(li);
+
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button onclick="removerItem(${index})">❌</button>
+        `;
+
+        lista.appendChild(li);
         total += item.preco;
     });
 
     totalSpan.innerText = total.toFixed(2);
+}
+
+function removerItem(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
 }
 
 function checkout() {
@@ -52,9 +72,7 @@ function checkout() {
         return;
     }
 
-    alert(`Pagamento via ${metodo}.\nConta: ${conta}`);
+    alert("Pagamento via " + metodo);
 
-    // 🔐 REDIRECIONAMENTO SEGURO (HTTPS)
-    window.location.href = "00020126360014br.gov.bcb.pix0114+55169962708145204000053039865802BR5915T202510181550266009Sao Paulo610901227-20062240520daqr2934183479538308630486F7";
+    window.location.href = "https://wa.me/5516996270814?text=Olá,%20quero%20pagar%20via%20Pix";
 }
-    
