@@ -87,23 +87,14 @@ function checkout() {
         })
     })
     .then(res => res.json())
-
-    // 🔥 👉 É AQUI QUE ENTRA O SEU CÓDIGO
     .then(data => {
-        const container = document.getElementById("carrinhoTela");
 
-        container.innerHTML = `
-            <h2>Escaneie o QR Code para pagar</h2>
-        `;
+        // 🔥 AQUI ACONTECE O REDIRECIONAMENTO
+        window.location.href = data.init_point;
 
-        const img = document.createElement("img");
-        img.src = "data:image/png;base64," + data.qr_code_base64;
-
-        container.appendChild(img);
     })
-
     .catch(err => {
         console.error(err);
-        alert("Erro ao gerar pagamento");
+        alert("Erro ao iniciar pagamento");
     });
 }

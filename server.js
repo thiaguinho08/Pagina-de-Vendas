@@ -8,34 +8,35 @@ app.use(cors());
 
 // 🔑 COLOQUE SEU ACCESS TOKEN AQUI
 mercadopago.configure({
-   access_token: "00020126360014br.gov.bcb.pix0114+55169962708145204000053039865802BR5915T202510181550266009Sao Paulo610901227-20062240520daqr29341834794508086304E6CF"
+    access_token: "SEU_TOKEN_AQUI"
 });
 
 app.post("/criar-pagamento", async (req, res) => {
     const itens = req.body.itens;
 
-    const total = itens.reduce((acc, item) => acc + item.preco, 0);
+    const preference = {
+        items: itens.map(item => ({
+            title: item.nome,
+            unit_price: Number(item.preco),
+            quantity: 1
+        })),
+        back_urls: {
+            success: "http://localhost:5500/sucesso.html",
+            failure: "http://localhost:5500/erro.html",
+            pending: "http://localhost:5500/pendente.html"
+        },
+        auto_return: "approved"
+    };
 
     try {
-        const pagamento = await mercadopago.payment.create({
-            transaction_amount: total,
-            description: "Compra na Thiago Store",
-            payment_method_id: "pix",
-            payer: {
-                email: "cliente@email.com"
-            }
-        });
+        const response = await mercadopago.preferences.create(preference);
 
         res.json({
-            qr_code: pagamento.body.point_of_interaction.transaction_data.qr_code,
-            qr_code_base64: pagamento.body.point_of_interaction.transaction_data.qr_code_base64
+            init_point: response.body.init_point
         });
 
     } catch (error) {
         console.log(error);
-        res.status(500).send("Erro ao gerar Pix");
+        res.status(500).send("Erro ao criar pagamento");
     }
-});
-app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000");
 });
