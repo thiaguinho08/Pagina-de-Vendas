@@ -1,6 +1,7 @@
 const express = require("express");
 const mercadopago = require("mercadopago");
 const cors = require("cors");
+const { Server } = require("node:http");
 
 const app = express();
 app.use(express.json());
@@ -40,3 +41,9 @@ app.post("/criar-pagamento", async (req, res) => {
         res.status(500).send("Erro ao criar pagamento");
     }
 });
+
+app.listen(3000, () => {
+    console.log("Servidor rodando na porta 3000");
+});
+
+ $ node Server.js 
